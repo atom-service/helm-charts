@@ -33,6 +33,13 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: INIT_ADMIN_PASSWORD
+              value: {{ .Values.init.admin_password }}
+            - name: INIT_ADMIN_USERNAME
+              value: {{ .Values.init.admin_username }}
+            - name: POSTGRES_URI
+              value: {{ .Values.init.postgres_uri }}
           ports:
             - name: http
               containerPort: {{ .Values.service.port }}

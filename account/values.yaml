@@ -2,7 +2,7 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-replicaCount: 2
+replicaCount: 1
 
 image:
   repository: ghcr.io/atom-service/account
@@ -25,10 +25,12 @@ serviceAccount:
 
 podAnnotations: {}
 
-podSecurityContext: {}
+podSecurityContext:
+  {}
   # fsGroup: 2000
 
-securityContext: {}
+securityContext:
+  {}
   # capabilities:
   #   drop:
   #   - ALL
@@ -43,7 +45,8 @@ service:
 ingress:
   enabled: false
   className: ""
-  annotations: {}
+  annotations:
+    {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
@@ -56,7 +59,8 @@ ingress:
   #    hosts:
   #      - chart-example.local
 
-resources: {}
+resources:
+  {}
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
   # resources, such as Minikube. If you do want to specify resources, uncomment the following
@@ -69,9 +73,9 @@ resources: {}
   #   memory: 128Mi
 
 autoscaling:
-  enabled: false
+  enabled: true
   minReplicas: 1
-  maxReplicas: 100
+  maxReplicas: 10
   targetCPUUtilizationPercentage: 80
   # targetMemoryUtilizationPercentage: 80
 
@@ -80,3 +84,8 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+init:
+  admin_username:
+  admin_password:
+  postgres_uri: postgresql://postgres:password@localhost/account
