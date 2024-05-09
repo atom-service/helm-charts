@@ -2,6 +2,16 @@ apiVersion: v1
 entries:
   account:
   - apiVersion: v2
+    appVersion: 0.1.2
+    created: "2024-05-09T06:04:13.719852503Z"
+    description: Open source account system, including permissions, provided by atom-serice
+    digest: dc3b3c97fc2d2f0ae3bb8c1d2efbdf2cc751de6f1f986967e6db9e478c0ba113
+    name: account
+    type: application
+    urls:
+    - https://github.com/atom-service/helm-charts/releases/download/account-0.1.2/account-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
     appVersion: 0.1.1
     created: "2024-04-28T08:33:07.173514748Z"
     description: Open source account system, including permissions, provided by atom-serice
@@ -21,4 +31,4 @@ entries:
     urls:
     - https://github.com/atom-service/helm-charts/releases/download/account-0.1.0/account-0.1.0.tgz
     version: 0.1.0
-generated: "2024-04-28T08:33:07.173551086Z"
+generated: "2024-05-09T06:04:13.71988874Z"
